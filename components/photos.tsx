@@ -14,32 +14,41 @@ interface PhotoCardProps {
   photo: PhotoItem;
 }
 
-const PhotoCard: React.FC<PhotoCardProps> = ({ photo }) => (
-  <div className="flex flex-col group">
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.8 }}
-      className="w-full overflow-hidden shadow-sm"
-    >
-      <img 
-        src={photo.url} 
-        alt={photo.names} 
-        className="w-full h-auto object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-[1500ms] hover:scale-105" 
-      />
-    </motion.div>
-    <div className="mt-8 px-2">
-      <div className="flex items-center gap-3 mb-2">
-        <span className="text-wedding-gold text-xl font-light">+</span>
-        <h3 className="text-[10px] uppercase tracking-[0.4em] font-black text-wedding-slate">
-          {photo.names}
-        </h3>
+const PhotoCard: React.FC<PhotoCardProps> = ({ photo }) => {
+  // Access the base URL from Vite's environment
+  const base = import.meta.env.BASE_URL;
+
+  // Clean the URL: if it starts with a slash, remove it so we don't get //
+  const cleanUrl = photo.url.startsWith('/') ? photo.url.slice(1) : photo.url;
+  const fullImageUrl = `${base}${cleanUrl}`;
+
+  return (
+    <div className="flex flex-col group">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.8 }}
+        className="w-full overflow-hidden shadow-sm"
+      >
+        <img 
+          src={fullImageUrl} 
+          alt={photo.names} 
+          className="w-full h-auto object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-[1500ms] hover:scale-105" 
+        />
+      </motion.div>
+      <div className="mt-8 px-2">
+        <div className="flex items-center gap-3 mb-2">
+          <span className="text-wedding-gold text-xl font-light">+</span>
+          <h3 className="text-[10px] uppercase tracking-[0.4em] font-black text-wedding-slate">
+            {photo.names}
+          </h3>
+        </div>
+        <p className="text-[10px] font-serif italic text-gray-500 ml-7 tracking-widest">{photo.loc}</p>
       </div>
-      <p className="text-[10px] font-serif italic text-gray-500 ml-7 tracking-widest">{photo.loc}</p>
     </div>
-  </div>
-);
+  );
+};
 
 export const PhotoStills: React.FC = () => {
 const PHOTO_DATA: PhotoItem[] = [

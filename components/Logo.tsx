@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface LogoProps {
@@ -6,8 +5,9 @@ interface LogoProps {
 }
 
 const Logo: React.FC<LogoProps> = ({ className = "h-20" }) => {
-  // Directly using the image provided by the user via a stable data URL
-  const logoSrc = "content/logo.png";
+  const base = import.meta.env.BASE_URL;
+  
+  const logoSrc = `${base}content/logo.png`;
 
   return (
     <div className={`flex items-center justify-center bg-white ${className}`}>
@@ -18,7 +18,7 @@ const Logo: React.FC<LogoProps> = ({ className = "h-20" }) => {
         style={{ mixBlendMode: 'multiply' }}
         onError={(e) => {
           const target = e.target as HTMLImageElement;
-          // Robust fallback to a clear text-based representation if the external source is unreachable
+          // Fallback if the logo fails to load
           target.src = "https://placehold.co/800x600/ffffff/D4AF37?text=HERE+COMES+THE+CREATIONS";
         }}
       />

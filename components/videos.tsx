@@ -33,9 +33,12 @@ const VIDEO_DATA: VideoItem[] = [
 
 const VideoPlayer = ({ url, isActive }: { url: string; isActive: boolean }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  // When the URL or active state changes, handle playback
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
+
     if (isActive) {
       video.muted = true;
       video.play().catch(() => {});
@@ -46,7 +49,14 @@ const VideoPlayer = ({ url, isActive }: { url: string; isActive: boolean }) => {
   }, [isActive, url]);
 
   return (
-    <video ref={videoRef} loop muted playsInline className="w-full h-full object-cover">
+    <video 
+      ref={videoRef} 
+      loop 
+      muted 
+      playsInline 
+      key={url} // Force re-render when URL changes to update source
+      className="w-full h-full object-cover"
+    >
       <source src={url} type="video/mp4" />
     </video>
   );
@@ -55,8 +65,12 @@ const VideoPlayer = ({ url, isActive }: { url: string; isActive: boolean }) => {
 export const VideoReels: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+  
+  // Get the base URL for GitHub Pages
+  const base = import.meta.env.BASE_URL;
 
   const getWrappedIndex = (index: number) => (index + VIDEO_DATA.length) % VIDEO_DATA.length;
+  
   const paginate = (newDir: number) => {
     setDirection(newDir);
     setCurrentIndex(prev => getWrappedIndex(prev + newDir));
@@ -77,6 +91,11 @@ export const VideoReels: React.FC = () => {
             {visibleIndices.map((dataIndex, i) => {
               const item = VIDEO_DATA[dataIndex];
               const position = i - 1;
+
+              // Helper to clean path and add base
+              const cleanPath = item.url.startsWith('/') ? item.url.slice(1) : item.url;
+              const fullUrl = `${base}${cleanPath}`;
+
               return (
                 <motion.div
                   key={`${item.id}-${dataIndex}`}
@@ -99,7 +118,7 @@ export const VideoReels: React.FC = () => {
                   className="absolute w-[240px] md:w-[300px] shadow-2xl overflow-hidden rounded-sm bg-gray-100 touch-pan-y"
                 >
                   <div className="aspect-[9/16]">
-                    <VideoPlayer url={item.url} isActive={position === 0} />
+                    <VideoPlayer url={fullUrl} isActive={position === 0} />
                   </div>
                   {position === 0 && (
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-8 text-center px-4">
