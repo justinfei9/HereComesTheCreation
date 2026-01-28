@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
+  const base = import.meta.env.BASE_URL;
+
   return (
     <div className="overflow-hidden">
       {/* Hero Section - Using video1.MOV */}
@@ -14,8 +16,8 @@ const Home: React.FC = () => {
             playsInline
             className="w-full h-full object-cover brightness-[0.4]"
           >
-            <source src="content/video1.MOV" type="video/mp4" />
-            <img src="content/image1.JPEG" alt="Fallback" />
+            <source src={`${base}content/video1.MOV`} type="video/mp4" />
+            <img src={`${base}content/image1.JPEG`} alt="Fallback" />
           </video>
         </div>
 
@@ -46,7 +48,7 @@ const Home: React.FC = () => {
           <div className="relative">
             <div className="absolute -inset-4 border border-wedding-gold/30 -z-10 translate-x-2 translate-y-2"></div>
             <img 
-              src="content/image1.JPEG" 
+              src={`${base}content/image1.JPEG`} 
               alt="Candid moment" 
               className="w-full h-[650px] object-cover shadow-2xl" 
             />
@@ -72,38 +74,36 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* The Social Grid - Using video2, video3, video4, video5 */}
-      {/* Replace the 4-video grid with a cleaner 3-video "Highlights" section */}
-<section className="py-24 bg-white px-6">
-  <div className="max-w-7xl mx-auto">
-    <div className="text-center mb-16">
-      <h3 className="font-serif text-4xl italic text-wedding-slate mb-4">The Highlight Edit</h3>
-      <p className="text-gray-400 uppercase tracking-widest text-[10px]">What you'll be sharing within 48 hours</p>
-    </div>
-    
-    {/* Only 3 videos here for better mobile performance and focus */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {[ 'highlight1NM.MOV', 'short1.MOV', 'video3.MOV' ].map((vid, index) => (
-        <div key={index} className="aspect-[9/16] bg-gray-100 overflow-hidden shadow-2xl">
-          <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-            <source src={`content/${vid}`} type="video/mp4" />
-          </video>
-        </div>
-      ))}
-    </div>
+      {/* The Social Grid */}
+      <section className="py-24 bg-white px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h3 className="font-serif text-4xl italic text-wedding-slate mb-4">The Highlight Edit</h3>
+            <p className="text-gray-400 uppercase tracking-widest text-[10px]">What you'll be sharing within 48 hours</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[ 'highlight1NM.MOV', 'short1.MOV', 'video3.MOV' ].map((vid, index) => (
+              <div key={index} className="aspect-[9/16] bg-gray-100 overflow-hidden shadow-2xl">
+                <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+                  <source src={`${base}content/${vid}`} type="video/mp4" />
+                </video>
+              </div>
+            ))}
+          </div>
 
-    <div className="mt-12 text-center">
-      <Link to="/portfolio" className="text-wedding-gold uppercase text-xs tracking-[0.3em] font-bold border-b-2 border-wedding-gold pb-2 hover:text-wedding-slate transition-all">
-        Explore Full Portfolio
-      </Link>
-    </div>
-  </div>
-</section>
+          <div className="mt-12 text-center">
+            <Link to="/portfolio" className="text-wedding-gold uppercase text-xs tracking-[0.3em] font-bold border-b-2 border-wedding-gold pb-2 hover:text-wedding-slate transition-all">
+              Explore Full Portfolio
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Full-Width Feature - Using image2.JPEG */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <img 
-          src="content/image2.JPEG" 
+          src={`${base}content/image2.JPEG`} 
           alt="Wedding BTS" 
           className="absolute inset-0 w-full h-full object-cover" 
         />
@@ -115,8 +115,6 @@ const Home: React.FC = () => {
           </Link>
         </div>
       </section>
-
-     
     </div>
   );
 };
