@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://justinfei9.github.io/HereComesTheCreation",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,7 +12,6 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "homepage": "https://justinfei9.github.io/HereComesTheCreation",
     "framer-motion": "^12.29.2",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
