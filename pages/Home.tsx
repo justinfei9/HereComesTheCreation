@@ -14,8 +14,8 @@ const Home: React.FC = () => {
             playsInline
             className="w-full h-full object-cover brightness-[0.4]"
           >
-            <source src="/content/video1.MOV" type="video/mp4" />
-            <img src="/content/image1.JPEG" alt="Fallback" />
+            <source src="content/video1.MOV" type="video/mp4" />
+            <img src="content/image1.JPEG" alt="Fallback" />
           </video>
         </div>
 
@@ -46,7 +46,7 @@ const Home: React.FC = () => {
           <div className="relative">
             <div className="absolute -inset-4 border border-wedding-gold/30 -z-10 translate-x-2 translate-y-2"></div>
             <img 
-              src="/content/image1.JPEG" 
+              src="content/image1.JPEG" 
               alt="Candid moment" 
               className="w-full h-[650px] object-cover shadow-2xl" 
             />
@@ -86,7 +86,7 @@ const Home: React.FC = () => {
       {[ 'highlight1NM.MOV', 'short1.MOV', 'video3.MOV' ].map((vid, index) => (
         <div key={index} className="aspect-[9/16] bg-gray-100 overflow-hidden shadow-2xl">
           <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-            <source src={`/content/${vid}`} type="video/mp4" />
+            <source src={`content/${vid}`} type="video/mp4" />
           </video>
         </div>
       ))}
@@ -103,7 +103,7 @@ const Home: React.FC = () => {
       {/* Full-Width Feature - Using image2.JPEG */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <img 
-          src="/content/image2.JPEG" 
+          src="content/image2.JPEG" 
           alt="Wedding BTS" 
           className="absolute inset-0 w-full h-full object-cover" 
         />
