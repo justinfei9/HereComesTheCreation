@@ -95,43 +95,57 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* MOBILE OVERLAY (Framer Motion) */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 bg-wedding-cream z-[100] md:hidden flex flex-col justify-center items-center"
-          >
-            <div className="flex flex-col space-y-10 text-center">
-              {navItems.concat({ name: 'Contact', path: '/contact' }).map((item, idx) => (
-                <motion.div
-                  key={item.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 * idx }}
-                >
-                  <Link
-                    to={item.path}
-                    className={`text-lg uppercase tracking-[0.4em] font-serif italic ${
-                      location.pathname === item.path ? 'text-wedding-gold' : 'text-wedding-slate'
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
+{/* MOBILE OVERLAY (Framer Motion) */}
+<AnimatePresence>
+  {isMenuOpen && (
+    <motion.div
+      initial={{ x: '100%' }}
+      animate={{ x: 0 }}
+      exit={{ x: '100%' }}
+      transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+      // Fixed: changed z-index to 200 to stay above everything else
+      // Fixed: bg-white is solid to hide the page content underneath
+      className="fixed inset-0 bg-white z-[200] md:hidden flex flex-col justify-center items-center"
+    >
+      {/* Re-adding the Close Button inside the menu so you can exit */}
+      <button 
+        className="absolute top-8 right-8 p-2 text-wedding-slate"
+        onClick={() => setIsMenuOpen(false)}
+      >
+        <div className="w-6 h-5 relative flex flex-col justify-between">
+          <span className="w-full h-[1px] bg-current rotate-45 translate-y-2" />
+          <span className="w-full h-[1px] bg-current -rotate-45 -translate-y-2" />
+        </div>
+      </button>
 
-            {/* Mobile Footer Branding */}
-            <div className="absolute bottom-12 text-center">
-              <p className="text-[8px] uppercase tracking-[0.5em] text-wedding-gold/60 font-bold mb-2">Based in New York</p>
-              <p className="text-[9px] uppercase tracking-[0.3em] text-wedding-slate/40">Est. 2025</p>
-            </div>
+      <div className="flex flex-col space-y-10 text-center">
+        {navItems.concat({ name: 'Contact', path: '/contact' }).map((item, idx) => (
+          <motion.div
+            key={item.name}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 * idx }}
+          >
+            <Link
+              to={item.path}
+              className={`text-2xl uppercase tracking-[0.4em] font-serif italic ${
+                location.pathname === item.path ? 'text-wedding-gold' : 'text-wedding-slate'
+              }`}
+            >
+              {item.name}
+            </Link>
           </motion.div>
-        )}
-      </AnimatePresence>
+        ))}
+      </div>
+
+      {/* Mobile Footer Branding */}
+      <div className="absolute bottom-12 text-center">
+        <p className="text-[8px] uppercase tracking-[0.5em] text-wedding-gold/60 font-bold mb-2">Based in New York</p>
+        <p className="text-[9px] uppercase tracking-[0.3em] text-wedding-slate/40">Est. 2025</p>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
     </nav>
   );
 };
