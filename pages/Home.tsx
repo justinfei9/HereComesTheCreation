@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Testimonials from '../components/testimonials';
+import Testimonials from '../components/Testimonials';
 
 const Home: React.FC = () => {
   const base = import.meta.env.BASE_URL;
