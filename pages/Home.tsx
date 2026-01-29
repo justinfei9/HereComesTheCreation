@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Testimonials from '../components/testimonials';
 
 const Home: React.FC = () => {
   const base = import.meta.env.BASE_URL;
@@ -100,7 +101,9 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Full-Width Feature - Using image2.JPEG */}
+
+        <Testimonials />
+      {}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <img 
           src={`${base}content/image2.JPEG`} 
