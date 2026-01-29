@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Testimonials from '../components/Testimonials';
+//fix import here, github capitalization error
+import Testimonials from '../components/testimonials';
 
 const Home: React.FC = () => {
   const base = import.meta.env.BASE_URL;
