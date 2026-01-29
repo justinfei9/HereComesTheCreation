@@ -15,10 +15,7 @@ interface PhotoCardProps {
 }
 
 const PhotoCard: React.FC<PhotoCardProps> = ({ photo }) => {
-  // Access the base URL from Vite's environment
   const base = import.meta.env.BASE_URL;
-
-  // Clean the URL: if it starts with a slash, remove it so we don't get //
   const cleanUrl = photo.url.startsWith('/') ? photo.url.slice(1) : photo.url;
   const fullImageUrl = `${base}${cleanUrl}`;
 
@@ -37,15 +34,7 @@ const PhotoCard: React.FC<PhotoCardProps> = ({ photo }) => {
           className="w-full h-auto object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-[1500ms] hover:scale-105" 
         />
       </motion.div>
-      <div className="mt-8 px-2">
-        <div className="flex items-center gap-3 mb-2">
-          <span className="text-wedding-gold text-xl font-light">+</span>
-          <h3 className="text-[10px] uppercase tracking-[0.4em] font-black text-wedding-slate">
-            {photo.names}
-          </h3>
-        </div>
-        <p className="text-[10px] font-serif italic text-gray-500 ml-7 tracking-widest">{photo.loc}</p>
-      </div>
+      {}
     </div>
   );
 };

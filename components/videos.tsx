@@ -119,12 +119,6 @@ export const VideoReels: React.FC = () => {
                   <div className="aspect-[9/16]">
                     <VideoPlayer url={fullUrl} isActive={position === 0} />
                   </div>
-                  {position === 0 && (
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-8 text-center px-4">
-                      <h3 className="font-serif text-xl md:text-2xl italic text-wedding-slate">{item.title}</h3>
-                      <p className="text-[10px] uppercase tracking-widest text-wedding-gold mt-1">{item.loc}</p>
-                    </motion.div>
-                  )}
                 </motion.div>
               );
             })}

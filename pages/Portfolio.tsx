@@ -8,12 +8,10 @@ const Portfolio: React.FC = () => {
     <div className="pt-20 pb-24 bg-wedding-cream min-h-screen overflow-x-hidden">
       
       {/* Section 1: The Swiping Video Reels 
-          Handles the Framer Motion slider and auto-playing .MOV files
       */}
       <VideoReels />
 
       {/* Section 2: The Stitched Staggered Stills 
-          Handles the 1L, 1.5R masonry layout for image1 through image23
       */}
       <PhotoStills />
 
