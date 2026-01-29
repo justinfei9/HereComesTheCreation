@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
             <h4 className="uppercase tracking-[0.4em] text-[9px] font-bold mb-6 text-wedding-gold/50">Connect</h4>
             <div className="flex space-x-6 text-xl">
               <a 
-                href="https://instagram.com/herecomesthecreation" 
+                href="https://instagram.com/herecomesthecreations" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="text-wedding-cream hover:text-wedding-gold transition-all hover:-translate-y-1"
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
                 <i className="fa-brands fa-instagram"></i>
               </a>
               <a 
-                href="https://tiktok.com/@herecomesthecreation" 
+                href="https://tiktok.com/@herecomesthecreations" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="text-wedding-cream hover:text-wedding-gold transition-all hover:-translate-y-1"
@@ -55,14 +55,15 @@ const Footer: React.FC = () => {
               </a>
             </div>
             <p className="mt-4 text-[9px] tracking-[0.2em] text-gray-600 uppercase">
-              @herecomesthecreation
+              @herecomesthecreations
             </p>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-[8px] md:text-[9px] uppercase tracking-[0.3em] text-gray-500">
-          <p>© 2026 Here Comes The Creation</p>
+          /*get date*/ 
+          <p>© {new Date().getFullYear()} Here Comes The Creations</p>
           <div className="mt-4 md:mt-0 space-x-8">
             <button 
               onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} 

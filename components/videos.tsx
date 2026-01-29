@@ -22,7 +22,6 @@ const VIDEO_DATA: VideoItem[] = [
     { id: 'v11', url: '/content/noMusic1.MOV', title: 'p11', loc: 'p11' },
     { id: 'v12', url: '/content/video3.MOV', title: 'p12', loc: 'p12' },
     { id: 'v13', url: '/content/video4.MOV', title: 'p13', loc: 'p13' },
-    { id: 'v14', url: '/content/video5.MOV', title: 'p14', loc: 'p14' },
     { id: 'v15', url: '/content/video6.MOV', title: 'p15', loc: 'p15' },
     { id: 'v16', url: '/content/video7.MOV', title: 'p16', loc: 'p16' },
     { id: 'v17', url: '/content/video8.MOV', title: 'p17', loc: 'p17' },

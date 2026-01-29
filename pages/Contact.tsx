@@ -45,10 +45,10 @@ const Contact: React.FC = () => {
           >
             <h4 className="text-wedding-gold uppercase tracking-[0.4em] text-[9px] font-bold mb-6">Direct Inquiries</h4>
             <a 
-              href="mailto:herecomesthecreation@gmail.com" 
+              href="mailto:herecomesthecreations@gmail.com" 
               className="font-serif text-2xl md:text-3xl lg:text-4xl italic text-wedding-slate hover:text-wedding-gold transition-colors duration-500"
             >
-              herecomesthecreation@gmail.com
+              herecomesthecreations@gmail.com
             </a>
             <p className="mt-4 text-gray-400 tracking-[0.3em] text-xs font-light">631.275.3791</p>
           </motion.div>
@@ -63,7 +63,7 @@ const Contact: React.FC = () => {
             <h4 className="text-wedding-gold uppercase tracking-[0.4em] text-[9px] font-bold mb-8">The Socials</h4>
             <div className="flex justify-center md:justify-start space-x-10 text-3xl text-wedding-slate">
               <a 
-                href="https://instagram.com/herecomesthecreation" 
+                href="https://instagram.com/herecomesthecreations" 
                 target="_blank" 
                 rel="noreferrer"
                 className="hover:text-wedding-gold transition-all duration-500 hover:-translate-y-1"
@@ -71,7 +71,7 @@ const Contact: React.FC = () => {
                 <i className="fa-brands fa-instagram"></i>
               </a>
               <a 
-                href="https://tiktok.com/@herecomesthecreation" 
+                href="https://tiktok.com/@herecomesthecreations" 
                 target="_blank" 
                 rel="noreferrer"
                 className="hover:text-wedding-gold transition-all duration-500 hover:-translate-y-1"
@@ -79,7 +79,7 @@ const Contact: React.FC = () => {
                 <i className="fa-brands fa-tiktok"></i>
               </a>
             </div>
-            <p className="mt-6 text-[10px] uppercase tracking-[0.4em] text-gray-400 font-medium">@herecomesthecreation</p>
+            <p className="mt-6 text-[10px] uppercase tracking-[0.4em] text-gray-400 font-medium">@herecomesthecreations</p>
           </motion.div>
 
         </div>
