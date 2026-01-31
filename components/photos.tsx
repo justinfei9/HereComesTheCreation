@@ -65,9 +65,9 @@ const PHOTO_DATA: PhotoItem[] = [
     { id: 'p22', url: '/content/image23.JPEG', names: 't22', loc: 'p22' },
     { id: 'p23', url: '/content/newImage4.JPEG', names: 't23', loc: 'p23' },
     { id: 'p24', url: '/content/newImage5.JPEG', names: 't24', loc: 'p24' },
-    { id: 'p25', url: '/content/noBorder1.JPEG', names: 't25', loc: 'p25' },
-    { id: 'p26', url: '/content/noBorder2.JPEG', names: 't26', loc: 'p26' },
-    { id: 'p27', url: '/content/noBorder3.JPEG', names: 't27', loc: 'p27' },
+    { id: 'p25', url: '/content/noBoarder1.JPEG', names: 't25', loc: 'p25' },
+    { id: 'p26', url: '/content/noBoarder2.JPEG', names: 't26', loc: 'p26' },
+    { id: 'p27', url: '/content/noBoarder3.JPEG', names: 't27', loc: 'p27' },
 
 ];
 
