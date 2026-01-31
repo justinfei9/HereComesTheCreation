@@ -51,23 +51,16 @@ const Testimonials: React.FC = () => {
 
   useEffect(() => {
     let timer: ReturnType<typeof setInterval>;
-    
     if (!isPaused) {
-      // The timer now resets every time 'index' or 'isPaused' changes
       timer = setInterval(() => {
         setIndex((prev) => (prev + 1) % TESTIMONIALS.length);
       }, 7000); 
     }
+    return () => { if (timer) clearInterval(timer); };
+  }, [index, isPaused]);
 
-    return () => {
-      if (timer) clearInterval(timer);
-    };
-  }, [index, isPaused]); // Added 'index' here to reset the 7s clock on every click
-
-  const handleManualNav = (i: number) => {
-    setIndex(i);
-    // The useEffect will catch this change, clear the old interval, 
-    // and start a fresh 7-second countdown for the new slide.
+  const paginate = (direction: number) => {
+    setIndex((prev) => (prev + direction + TESTIMONIALS.length) % TESTIMONIALS.length);
   };
 
   return (
@@ -78,22 +71,31 @@ const Testimonials: React.FC = () => {
         </span>
 
         <div 
-          className="relative min-h-[450px] md:min-h-[320px] flex items-center justify-center cursor-default"
+          className="relative min-h-[500px] md:min-h-[350px] flex items-center justify-center cursor-grab active:cursor-grabbing"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
-          onTouchStart={() => setIsPaused(true)}
-          onTouchEnd={() => setIsPaused(false)}
         >
           <AnimatePresence mode="wait">
             <motion.div
-              key={TESTIMONIALS[index].id}
-              initial={{ opacity: 0, x: 15 }}
+              key={index}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.2}
+              onDragEnd={(_, info) => {
+                const swipeThreshold = 50;
+                if (info.offset.x < -swipeThreshold) {
+                  paginate(1); // Swipe Left -> Next
+                } else if (info.offset.x > swipeThreshold) {
+                  paginate(-1); // Swipe Right -> Prev
+                }
+              }}
+              initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -15 }}
-              transition={{ duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }}
-              className="space-y-10"
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="space-y-10 w-full touch-pan-y"
             >
-              <blockquote className="space-y-8">
+              <blockquote className="space-y-8 select-none">
                 <p className="font-serif text-2xl md:text-4xl text-wedding-slate italic leading-[1.5] tracking-tight px-4 max-w-4xl mx-auto">
                   "{TESTIMONIALS[index].quote}"
                 </p>
@@ -112,7 +114,7 @@ const Testimonials: React.FC = () => {
           {TESTIMONIALS.map((_, i) => (
             <button
               key={i}
-              onClick={() => handleManualNav(i)}
+              onClick={() => setIndex(i)}
               className={`h-1 transition-all duration-700 ease-in-out ${
                 i === index ? 'w-10 bg-wedding-gold' : 'w-2 bg-wedding-gold/20'
               }`}
