@@ -10,13 +10,13 @@ interface Testimonial {
 const TESTIMONIALS: Testimonial[] = [
   {
     id: 1,
-    quote: "We cannot thank Ellie enough for the incredible content she created... somehow Ellie captured it all so beautifully and effortlessly. Not forgetting we got all this back in less than 24 hours.",
-    author: "Kayleigh Moylan",
+    quote: "We cannot thank Ellie enough for the incredible content she created ... somehow Ellie captured it all so beautifully and effortlessly. Not forgetting we got all this back in less than 24 hours.",
+    author: "Kayleigh Smith",
   },
   {
     id: 2,
     quote: "The content beautifully captured the vibe of our wedding and gave us candid moments we’ll truly cherish. We were very impressed with the quality of what she delivered.",
-    author: "Sophie",
+    author: "Sophie Danielpour",
   },
   {
     id: 3,
@@ -26,12 +26,22 @@ const TESTIMONIALS: Testimonial[] = [
   {
     id: 4,
     quote: "Eliana was great to work with! She was super responsive and understood exactly what I wanted... She also partnered perfectly with our photo and video team. Would highly recommend!",
-    author: "Megan S",
+    author: "Megan Garry",
   },
   {
     id: 5,
-    quote: "Eliana was referred to us by our planner and she did such an amazing job! Super sweet and communicative and received our pictures only a few days after! Highly recommend her!",
-    author: "Jasmine Joseph",
+    quote: "We decided on content creation sort of last minute and I'm so glad we did! It was so nice to have so many photos and videos of behind the scenes moments the next day to look at! Eliana was great and captured the day perfectly!",
+    author: "Kristen Silberger",
+  },
+  {
+    id: 6,
+    quote: "From the quiet, emotional moments to the laughter and excitement, every detail was documented so beautifully and authentically. I was so appreciative to be able to see photos and videos the very next day!",
+    author: "Jenna LaMantia",
+  },
+  {
+    id: 7,
+    quote: "Eliana is very attentive and was right there to get all the good shots! We were so lucky to have her with us for the day!",
+    author: "Emily Munar",
   }
 ];
 
