@@ -8,10 +8,9 @@ const Founder: React.FC = () => {
     <section className="py-24 px-6 bg-wedding-cream overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         
-        {/* LEFT SIDE: VERTICAL TEXT & IMAGE CONTAINER */}
-        <div className="relative order-2 lg:order-1 flex items-stretch gap-6 md:gap-10">
-          
-          {/* VERTICAL TEXT: "THE FOUNDER" */}
+        {/* 1. IMAGE FIRST (Mobile top by default) */}
+        <div className="relative flex items-stretch gap-6 md:gap-10 lg:order-1">
+          {/* VERTICAL TEXT */}
           <div className="flex flex-col justify-center">
             <p 
               className="font-serif italic text-black/80 text-3xl md:text-5xl uppercase tracking-[0.5em] select-none whitespace-nowrap"
@@ -24,11 +23,9 @@ const Founder: React.FC = () => {
             </p>
           </div>
 
-          {/* IMAGE CONTAINER */}
+          {/* IMAGE */}
           <div className="relative flex-1">
-            {/* Decorative Offset Frame */}
             <div className="absolute -top-4 -left-4 w-full h-full border border-wedding-gold/30 -z-10 translate-x-2 translate-y-2"></div>
-            
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -44,8 +41,8 @@ const Founder: React.FC = () => {
           </div>
         </div>
 
-        {/* RIGHT SIDE: THE CONTENT */}
-        <div className="space-y-8 order-1 lg:order-2">
+        {/* 2. TEXT SECOND (Mobile bottom by default) */}
+        <div className="space-y-8 lg:order-2">
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -78,6 +75,7 @@ const Founder: React.FC = () => {
             </div>
           </motion.div>
         </div>
+
       </div>
     </section>
   );
