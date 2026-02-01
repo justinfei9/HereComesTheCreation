@@ -3,29 +3,38 @@ import { useState } from 'react';
 export default function ContactForm() {
   const [result, setResult] = useState("");
 
-  const onSubmit = async (event: any) => {
+const onSubmit = async (event: any) => {
     event.preventDefault();
     setResult("Sending....");
-    const formData = new FormData(event.target);
-
-    // Your unique Web3Forms Access Key
-    //takes in .env variable
-    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
     
+    const formData = new FormData(event.target);
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
+    // Safety check: If the key is missing, stop and show error
+    if (!accessKey) {
+      setResult("Configuration Error: Access Key Missing");
+      console.error("VITE_WEB3FORMS_ACCESS_KEY is not defined in the environment.");
+      return;
+    }
 
-    const data = await response.json();
+    formData.append("access_key", accessKey);
 
-    if (data.success) {
-      setResult("Thank you! Your inquiry has been sent.");
-      event.target.reset();
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData // Sending as FormData is correct for Web3Forms
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult("Thank you! Your inquiry has been sent.");
+        event.target.reset();
+      } else {
+        setResult(data.message || "Error submitting form");
+      }
+    } catch (error) {
+      setResult("Network error. Please try again later.");
     }
   };
   
