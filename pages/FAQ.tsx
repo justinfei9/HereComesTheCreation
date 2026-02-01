@@ -11,11 +11,11 @@ const FAQ: React.FC = () => {
   const faqs: FAQItem[] = [
     {
       question: "What exactly is a Wedding Content Creator?",
-      answer: "A wedding content creator captures your day specifically for social media (TikTok/Reels). We focus on behind-the-scenes footage, candid interactions, and trending moments using professional mobile devices, delivering raw content within 24 hours."
+      answer: "A wedding content creator captures footage from the guest perspective. We focus on behind-the-scenes footage, candid interactions, and trending moments using professional mobile devices, delivering raw content within 24 hours."
     },
     {
       question: "Do you replace a videographer or photographer?",
-      answer: "No, we are a complementary service! Photographers and videographers create high-end portraits and cinematic films. We capture the uncurated, live-feel moments that are perfect for Instagram and TikTok sharing."
+      answer: "No, we are a complementary service! Photographers and videographers create high-end portraits and cinematic films. We capture the uncurated, live-feel moments."
     },
     {
       question: "How long until I get my content?",
@@ -27,7 +27,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: "What equipment do you use?",
-      answer: "We use the latest iPhones equipped with professional stabilization (gimbals) and external microphones for high-quality audio to ensure your content looks wholesome and dreamy."
+      answer: "We use the latest iPhones equipped with professional stabilization (gimbals) and external microphones for high-quality audio."
     }
   ];
 
@@ -59,7 +59,6 @@ const FAQ: React.FC = () => {
                   className="w-full py-8 flex items-start text-left focus:outline-none group"
                   onClick={() => toggleAccordion(index)}
                 >
-                  {/* Reduced margin-right (mr) to pull question closer to number */}
                   <span className={`mr-4 md:mr-6 font-serif text-2xl italic transition-colors duration-300 ${
                     isOpen ? 'text-wedding-gold' : 'text-wedding-slate/30 group-hover:text-wedding-gold/60'
                   }`}>
@@ -74,7 +73,6 @@ const FAQ: React.FC = () => {
                         {faq.question}
                       </h3>
                       
-                      {/* Animated Icon */}
                       <motion.div 
                         animate={{ rotate: isOpen ? 45 : 0 }}
                         transition={{ duration: 0.3 }}
@@ -87,7 +85,6 @@ const FAQ: React.FC = () => {
                       </motion.div>
                     </div>
 
-                    {/* Answer Content */}
                     <AnimatePresence>
                       {isOpen && (
                         <motion.div
@@ -110,7 +107,7 @@ const FAQ: React.FC = () => {
           })}
         </div>
 
-        {/* Luxury CTA Footer */}
+        {/* CTA Footer */}
         <div className="mt-32 text-center">
           <p className="mb-8 font-serif text-2xl italic text-wedding-slate">Still have something on your mind?</p>
           <Link 
