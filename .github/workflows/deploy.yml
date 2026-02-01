@@ -25,14 +25,14 @@ jobs:
       - name: Install dependencies
         run: npm install --no-package-lock
         
-
       - name: Build
         run: npm run build
+        env:
+          VITE_WEB3FORMS_ACCESS_KEY: ${{ vars.VITE_WEB3FORMS_ACCESS_KEY }}
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          # This must match your Vite build output folder (usually 'dist')
           path: './dist'
 
   deploy_site:
