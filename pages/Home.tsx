@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-//fix import here, github capitalization error
 import Testimonials from '../components/testimonials';
+import Founder from '../components/Founder';
 
 const Home: React.FC = () => {
   const base = import.meta.env.BASE_URL;
 
   return (
     <div className="overflow-hidden">
-      {/* Hero Section - Using video1.MOV */}
+      {/* Hero Section */}
       <section className="relative h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <video
@@ -44,37 +44,8 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Philosophy Section - Using image1.JPEG */}
-      <section className="py-24 px-6 bg-wedding-cream">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-          <div className="relative">
-            <div className="absolute -inset-4 border border-wedding-gold/30 -z-10 translate-x-2 translate-y-2"></div>
-            <img 
-              src={`${base}content/image1.JPEG`} 
-              alt="Candid moment" 
-              className="w-full h-[650px] object-cover shadow-2xl" 
-            />
-          </div>
-
-          <div className="space-y-8">
-            <span className="text-wedding-gold uppercase tracking-[0.4em] text-[10px] font-black">Our Philosophy</span>
-            <h2 className="font-serif text-5xl md:text-6xl text-wedding-slate leading-tight italic">Beyond The Posed</h2>
-            <p className="text-wedding-slate/70 leading-relaxed text-lg font-light">
-              We capture the blurry laughs, the bridesmaids' reactions, and the raw energy that high-end cinema often misses.
-            </p>
-            <div className="grid grid-cols-2 gap-8 pt-6">
-              <div>
-                <h4 className="font-serif text-2xl text-wedding-gold italic mb-2">24h Delivery</h4>
-                <p className="text-xs text-gray-500 uppercase tracking-widest">Relive it instantly</p>
-              </div>
-              <div>
-                <h4 className="font-serif text-2xl text-wedding-gold italic mb-2">Social Ready</h4>
-                <p className="text-xs text-gray-500 uppercase tracking-widest">TikTok & Reel optimized</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Meet The Founder (Replaces Philosophy) */}
+      <Founder />
 
       {/* The Social Grid */}
       <section className="py-24 bg-white px-6">
@@ -102,9 +73,10 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <Testimonials />
 
-        <Testimonials />
-      {}
+      {/* Full-Width Feature Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <img 
           src={`${base}content/image2.JPEG`} 
@@ -115,7 +87,7 @@ const Home: React.FC = () => {
         <div className="relative z-10 text-center px-6">
           <h2 className="font-serif text-5xl md:text-7xl text-white italic mb-8">Unfiltered Love</h2>
           <Link to="/contact" className="inline-block px-12 py-5 bg-white text-wedding-slate font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-wedding-gold hover:text-white transition-all">
-            Inquire For 2026
+            Inquire For 2026 & 2027
           </Link>
         </div>
       </section>
