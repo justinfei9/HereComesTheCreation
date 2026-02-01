@@ -9,7 +9,9 @@ export default function ContactForm() {
     const formData = new FormData(event.target);
 
     // Your unique Web3Forms Access Key
+    //takes in .env variable
     formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
+    
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -26,6 +28,7 @@ export default function ContactForm() {
       setResult(data.message);
     }
   };
+  
 
   return (
     <div className="w-full">
