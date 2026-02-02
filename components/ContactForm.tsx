@@ -17,7 +17,6 @@ export default function ContactForm() {
     }
 
     formData.append("access_key", accessKey);
-    // Explicitly add the state of the toggle button to the form data
     formData.append("Interested_in_Additional_Events", extraEvents ? "Yes" : "No");
 
     try {
@@ -46,7 +45,7 @@ export default function ContactForm() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
-          {/* Full Name */}
+          {/* Row 1: Names */}
           <div className="flex flex-col space-y-2 text-left">
             <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-wedding-slate">Your Full Name</label>
             <input 
@@ -55,7 +54,6 @@ export default function ContactForm() {
             />
           </div>
 
-          {/* Fiance Full Name */}
           <div className="flex flex-col space-y-2 text-left">
             <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-wedding-slate">Partner's Full Name</label>
             <input 
@@ -64,7 +62,7 @@ export default function ContactForm() {
             />
           </div>
 
-          {/* Email Address */}
+          {/* Row 2: Contact Info */}
           <div className="flex flex-col space-y-2 text-left">
             <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-wedding-slate">Email Address</label>
             <input 
@@ -73,16 +71,15 @@ export default function ContactForm() {
             />
           </div>
 
-          {/* Phone Number */}
           <div className="flex flex-col space-y-2 text-left">
             <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-wedding-slate">Phone Number</label>
             <input 
-              type="tel" name="phone" placeholder="(555) 000-0000" required
+              type="tel" name="phone" placeholder="(000) 000-0000" required
               className="w-full p-4 border border-gray-200 bg-white focus:border-wedding-gold outline-none transition-all text-wedding-slate rounded-none text-sm"
             />
           </div>
 
-          {/* Wedding Date */}
+          {/* Row 3: Logistics */}
           <div className="flex flex-col space-y-2 text-left">
             <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-wedding-slate">Wedding Date</label>
             <input 
@@ -91,32 +88,23 @@ export default function ContactForm() {
             />
           </div>
 
-          {/* Venue & Location */}
           <div className="flex flex-col space-y-2 text-left">
             <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-wedding-slate">Venue & Location</label>
             <input 
-              type="text" name="venue" placeholder="e.g. The Plaza, NYC" required
+              type="text" name="venue" placeholder="Venue Name, City" required
               className="w-full p-4 border border-gray-200 bg-white focus:border-wedding-gold outline-none transition-all text-wedding-slate rounded-none text-sm"
             />
           </div>
 
-          {/* Referral Source */}
+          {/* Row 4: Source & Package */}
           <div className="flex flex-col space-y-2 text-left">
-            <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-wedding-slate">How did you hear from us?</label>
-            <select 
-              name="referral" required
-              className="w-full p-4 border border-gray-200 bg-white focus:border-wedding-gold outline-none transition-all text-wedding-slate rounded-none text-sm appearance-none"
-            >
-              <option value="">Select an option</option>
-              <option value="Instagram">Instagram</option>
-              <option value="TikTok">TikTok</option>
-              <option value="Referral">Referral</option>
-              <option value="Google">Google</option>
-              <option value="Other">Other</option>
-            </select>
+            <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-wedding-slate">How did you hear about us?</label>
+            <input 
+              type="text" name="referral_source" placeholder="e.g. Instagram, Friend, etc." required
+              className="w-full p-4 border border-gray-200 bg-white focus:border-wedding-gold outline-none transition-all text-wedding-slate rounded-none text-sm"
+            />
           </div>
 
-          {/* Package Interest */}
           <div className="flex flex-col space-y-2 text-left">
             <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-wedding-slate">Interested Package</label>
             <select 
@@ -131,7 +119,7 @@ export default function ContactForm() {
           </div>
         </div>
 
-        {/* Additional Events Toggle Button */}
+        {/* Additional Events Toggle */}
         <div className="flex flex-col space-y-3 pt-2">
           <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-wedding-slate text-left">Additional Coverage</label>
           <button
@@ -140,18 +128,18 @@ export default function ContactForm() {
             className={`w-full p-4 text-left transition-all border ${extraEvents ? 'border-wedding-gold bg-wedding-gold/5' : 'border-gray-200 bg-white'}`}
           >
             <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-serif italic text-wedding-slate">Interested in coverage for additional events?</p>
-                <p className="text-[9px] uppercase tracking-widest text-gray-400 mt-1">(Engagement Party, Bridal Shower, etc. | $150/hr • 3hr min)</p>
+              <div className="pr-4">
+                <p className="text-sm font-serif italic text-wedding-slate leading-tight">Interested in coverage for additional events?</p>
+                <p className="text-[9px] uppercase tracking-widest text-gray-400 mt-1 leading-tight">(Engagement Party, Bridal Shower, etc. • $150/hr • 3hr min)</p>
               </div>
-              <div className={`w-4 h-4 rounded-full border border-wedding-gold flex items-center justify-center`}>
-                {extraEvents && <div className="w-2 h-2 bg-wedding-gold rounded-full" />}
+              <div className={`flex-shrink-0 w-5 h-5 rounded-full border border-wedding-gold flex items-center justify-center`}>
+                {extraEvents && <div className="w-2.5 h-2.5 bg-wedding-gold rounded-full" />}
               </div>
             </div>
           </button>
         </div>
 
-        {/* Message / Vision */}
+        {/* Vision Area */}
         <div className="flex flex-col space-y-2 text-left">
           <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-wedding-slate">The Vision</label>
           <textarea 
@@ -160,7 +148,6 @@ export default function ContactForm() {
           />
         </div>
 
-        {/* Centered Button */}
         <div className="pt-8 flex justify-center">
           <button 
             type="submit" 
