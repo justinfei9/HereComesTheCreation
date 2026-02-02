@@ -46,6 +46,9 @@ const Contact: React.FC = () => {
               <a href="mailto:herecomesthecreations@gmail.com" className="text-wedding-slate hover:text-wedding-gold transition-colors font-medium">
                 herecomesthecreations@gmail.com
               </a>
+              <a href="tel:+1234567890" className="text-wedding-slate hover:text-wedding-gold transition-colors font-medium mt-2">
+                (631) 275-3791
+              </a>
             </div>
 
             {/* Social Icons Section */}

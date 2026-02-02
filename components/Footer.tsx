@@ -62,7 +62,6 @@ const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-[8px] md:text-[9px] uppercase tracking-[0.3em] text-gray-500">
-          /*get date*/ 
           <p>© {new Date().getFullYear()} Here Comes The Creations</p>
           <div className="mt-4 md:mt-0 space-x-8">
             <button 

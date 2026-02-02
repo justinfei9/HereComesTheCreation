@@ -33,7 +33,7 @@ const Founder: React.FC = () => {
               className="relative overflow-hidden shadow-2xl aspect-[4/5]"
             >
               <img 
-                src={`${base}content/founderPic.JPG`}
+                src={`${base}content/founderPic2.JPEG`}
                 alt="Eliana - Founder" 
                 className="w-full h-full object-cover" 
               />
