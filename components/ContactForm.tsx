@@ -114,9 +114,9 @@ export default function ContactForm() {
               className="w-full p-4 border border-gray-200 bg-white focus:border-wedding-gold outline-none transition-all text-wedding-slate rounded-none text-sm appearance-none"
             >
               <option value="">Select a package</option>
-              <option value="Cupid Arrow">Cupid Arrow ($1,000)</option>
-              <option value="I Do">I Do ($1,200)</option>
-              <option value="Honeymoon">Honeymoon ($1,400)</option>
+              <option value="Cupid Arrow">Cupid Arrow (6 hours)</option>
+              <option value="I Do">I Do (8 hours)</option>
+              <option value="Honeymoon">Honeymoon (10 hours)</option>
             </select>
           </div>
         </div>
