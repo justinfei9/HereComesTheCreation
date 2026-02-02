@@ -42,7 +42,9 @@ export default function ContactForm() {
   return (
     <div className="w-full">
       <form onSubmit={onSubmit} className="space-y-6">
-        
+        {/* Anti-Spam Honeypot (Hidden from humans) */}
+        <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
           {/* Row 1: Names */}
@@ -96,7 +98,7 @@ export default function ContactForm() {
             />
           </div>
 
-          {/* Row 4: Source & Package */}
+          {/* Row 4: Source & Updated Packages */}
           <div className="flex flex-col space-y-2 text-left">
             <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-wedding-slate">How did you hear about us?</label>
             <input 
@@ -112,9 +114,9 @@ export default function ContactForm() {
               className="w-full p-4 border border-gray-200 bg-white focus:border-wedding-gold outline-none transition-all text-wedding-slate rounded-none text-sm appearance-none"
             >
               <option value="">Select a package</option>
-              <option value="Essential">Essential Collection</option>
-              <option value="Luxury">Luxury Collection</option>
-              <option value="Bespoke">Bespoke / Destination</option>
+              <option value="Cupid Arrow">Cupid Arrow ($1,000)</option>
+              <option value="I Do">I Do ($1,200)</option>
+              <option value="Honeymoon">Honeymoon ($1,400)</option>
             </select>
           </div>
         </div>
