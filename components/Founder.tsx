@@ -8,38 +8,41 @@ const Founder: React.FC = () => {
     <section className="py-24 px-6 bg-wedding-cream overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         
-        {/* 1. IMAGE FIRST (Mobile top by default) */}
-        <div className="relative flex items-stretch gap-6 md:gap-10 lg:order-1">
-          {/* VERTICAL TEXT */}
-          <div className="flex flex-col justify-center">
-            <p 
-              className="font-serif italic text-black/80 text-3xl md:text-5xl uppercase tracking-[0.5em] select-none whitespace-nowrap"
-              style={{ 
-                writingMode: 'vertical-rl', 
-                transform: 'rotate(180deg)',
-              }}
-            >
-              The Founder
-            </p>
-          </div>
+       {/* 1. IMAGE SECTION */}
+<div className="relative flex items-center lg:items-stretch lg:gap-10 lg:order-1">
+  
+  {/* VERTICAL TEXT - Now absolute on mobile to prevent pushing the image */}
+  <div className="absolute left-0 z-10 lg:relative lg:flex lg:flex-col lg:justify-center">
+    <p 
+      className="font-serif italic text-black/80 text-2xl md:text-5xl uppercase tracking-[0.5em] select-none whitespace-nowrap"
+      style={{ 
+        writingMode: 'vertical-rl', 
+        transform: 'rotate(180deg)',
+      }}
+    >
+      The Founder
+    </p>
+  </div>
 
-          {/* IMAGE */}
-          <div className="relative flex-1">
-            <div className="absolute -top-4 -left-4 w-full h-full border border-wedding-gold/30 -z-10 translate-x-2 translate-y-2"></div>
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1 }}
-              className="relative overflow-hidden shadow-2xl aspect-[4/5]"
-            >
-              <img 
-                src={`${base}content/founderPic2.JPEG`}
-                alt="Eliana - Founder" 
-                className="w-full h-full object-cover" 
-              />
-            </motion.div>
-          </div>
-        </div>
+  {/* IMAGE CONTAINER */}
+  <div className="relative flex-1 ml-12 lg:ml-0">
+    {/* Border - Adjusted to be more subtle on mobile */}
+    <div className="absolute -top-2 -left-2 lg:-top-4 lg:-left-4 w-full h-full border border-wedding-gold/30 -z-10"></div>
+    
+    <motion.div 
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1 }}
+      className="relative overflow-hidden shadow-2xl aspect-[4/5]"
+    >
+      <img 
+        src={`${base}content/founderPic2.JPEG`}
+        alt="Eliana - Founder" 
+        className="w-full h-full object-cover" 
+      />
+    </motion.div>
+    </div>
+</div>
 
         {/* 2. TEXT SECOND (Mobile bottom by default) */}
         <div className="space-y-8 lg:order-2">
