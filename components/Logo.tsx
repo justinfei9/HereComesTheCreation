@@ -14,6 +14,8 @@ const Logo: React.FC<LogoProps> = ({ className = "h-20" }) => {
       <img 
         src={logoSrc} 
         alt="Here Comes The Creations" 
+        width={252}
+        height={168}
         className="h-full w-auto object-contain"
         style={{ mixBlendMode: 'multiply' }}
         onError={(e) => {

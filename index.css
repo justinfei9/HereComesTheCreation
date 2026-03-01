@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: Montserrat, sans-serif;
+  --color-wedding-gold: #D4AF37;
+  --color-wedding-cream: #FDFBF7;
+  --color-wedding-sage: #8A9A5B;
+  --color-wedding-slate: #2F4F4F;
+}
+
+body {
+  background-color: #FDFBF7;
+  scroll-behavior: smooth;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #D4AF37;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}

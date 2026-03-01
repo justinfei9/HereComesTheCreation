@@ -38,6 +38,9 @@ const Founder: React.FC = () => {
               <img
                 src={`${base}content/founderPicUpdated.png`}
                 alt="Eliana - Founder"
+                width={800}
+                height={1000}
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
             </motion.div>

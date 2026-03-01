@@ -19,7 +19,7 @@ const Home: React.FC = () => {
             className="w-full h-full object-cover brightness-[0.4]"
           >
             <source src={`${base}content/video1.MOV`} type="video/mp4" />
-            <img src={`${base}content/image1.JPEG`} alt="Fallback" />
+            <img src={`${base}content/image1.JPEG`} alt="Fallback" width={1920} height={1080} />
           </video>
         </div>
 
@@ -81,6 +81,9 @@ const Home: React.FC = () => {
         <img 
           src={`${base}content/image2.JPEG`} 
           alt="Wedding BTS" 
+          width={721}
+          height={1009}
+          loading="lazy"
           className="absolute inset-0 w-full h-full object-cover" 
         />
         <div className="absolute inset-0 bg-wedding-slate/40"></div>

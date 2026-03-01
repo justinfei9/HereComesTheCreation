@@ -31,6 +31,9 @@ const PhotoCard: React.FC<PhotoCardProps> = ({ photo }) => {
         <img 
           src={fullImageUrl} 
           alt={photo.names} 
+          width={800}
+          height={1200}
+          loading="lazy"
           className="w-full h-auto object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-[1500ms] hover:scale-105" 
         />
       </motion.div>
