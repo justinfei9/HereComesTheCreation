@@ -7,42 +7,42 @@ const Founder: React.FC = () => {
   return (
     <section className="py-24 px-6 bg-wedding-cream overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-        
-       {/* 1. IMAGE SECTION */}
-<div className="relative flex items-center lg:items-stretch lg:gap-10 lg:order-1">
-  
-  {/* VERTICAL TEXT - Now absolute on mobile to prevent pushing the image */}
-  <div className="absolute left-0 z-10 lg:relative lg:flex lg:flex-col lg:justify-center">
-    <p 
-      className="font-serif italic text-black/80 text-2xl md:text-5xl uppercase tracking-[0.5em] select-none whitespace-nowrap"
-      style={{ 
-        writingMode: 'vertical-rl', 
-        transform: 'rotate(180deg)',
-      }}
-    >
-      The Founder
-    </p>
-  </div>
 
-  {/* IMAGE CONTAINER */}
-  <div className="relative flex-1 ml-12 lg:ml-0">
-    {/* Border - Adjusted to be more subtle on mobile */}
-    <div className="absolute -top-2 -left-2 lg:-top-4 lg:-left-4 w-full h-full border border-wedding-gold/30 -z-10"></div>
-    
-    <motion.div 
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 1 }}
-      className="relative overflow-hidden shadow-2xl aspect-[4/5]"
-    >
-      <img 
-        src={`${base}content/founderPic2.JPEG`}
-        alt="Eliana - Founder" 
-        className="w-full h-full object-cover" 
-      />
-    </motion.div>
-    </div>
-</div>
+        {/* 1. IMAGE SECTION */}
+        <div className="relative flex items-center lg:items-stretch lg:gap-10 lg:order-1">
+
+          {/* VERTICAL TEXT - Now absolute on mobile to prevent pushing the image */}
+          <div className="absolute left-0 z-10 lg:relative lg:flex lg:flex-col lg:justify-center">
+            <p
+              className="font-serif italic text-black/80 text-2xl md:text-5xl uppercase tracking-[0.5em] select-none whitespace-nowrap"
+              style={{
+                writingMode: 'vertical-rl',
+                transform: 'rotate(180deg)',
+              }}
+            >
+              The Founder
+            </p>
+          </div>
+
+          {/* IMAGE CONTAINER */}
+          <div className="relative flex-1 ml-12 lg:ml-0">
+            {/* Border - Adjusted to be more subtle on mobile */}
+            <div className="absolute -top-2 -left-2 lg:-top-4 lg:-left-4 w-full h-full border border-wedding-gold/30 -z-10"></div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
+              className="relative overflow-hidden shadow-2xl aspect-[4/5]"
+            >
+              <img
+                src={`${base}content/founderPicUpdated.png`}
+                alt="Eliana - Founder"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          </div>
+        </div>
 
         {/* 2. TEXT SECOND (Mobile bottom by default) */}
         <div className="space-y-8 lg:order-2">
@@ -57,7 +57,7 @@ const Founder: React.FC = () => {
             <h2 className="font-serif text-5xl md:text-6xl text-wedding-slate leading-tight italic mb-6">
               Meet Eliana
             </h2>
-            
+
             <p className="text-wedding-slate/70 leading-relaxed text-lg font-light mb-6">
               "I created <span className="text-wedding-gold font-medium">Here Comes The Creation</span> because I believe the most beautiful parts of a wedding aren't just the posed and planned moments. They’re the in between laughs, the heartfelt reactions, and the raw moments."
             </p>

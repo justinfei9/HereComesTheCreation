@@ -10,7 +10,7 @@ const Packages: React.FC = () => {
       hours: "6",
       tagline: "The Essential Coverage",
       isFeatured: false,
-      nextDay: ["1 Social Media Trend", "200+ Raw Footage Items", "150+ Candids & Photos"],
+      nextDay: ["1 Social Media Trend", "Unlimited Raw Footage Items", "Unlimited Candids & Photos"],
       twoDay: ["2 Highlight Reels", "4 Short Form Videos", "10 Edited Photos"]
     },
     {
@@ -20,7 +20,7 @@ const Packages: React.FC = () => {
       hours: "8",
       tagline: "The Signature Experience",
       isFeatured: true,
-      nextDay: ["2 Social Media Trends", "250+ Raw Footage Items", "200+ Candids & Photos"],
+      nextDay: ["2 Social Media Trends", "Unlimited Raw Footage Items", "Unlimited Candids & Photos"],
       twoDay: ["3 Highlight Reels", "6 Short Form Videos", "15 Edited Photos"]
     },
     {
@@ -30,7 +30,7 @@ const Packages: React.FC = () => {
       hours: "10",
       tagline: "The Ultimate Story",
       isFeatured: false,
-      nextDay: ["3 Social Media Trends", "300+ Raw Footage Items", "250+ Candids & Photos"],
+      nextDay: ["3 Social Media Trends", "Unlimited Raw Footage Items", "Unlimited Candids & Photos"],
       twoDay: ["4 Highlight Reels", "8 Short Form Videos", "20 Edited Photos"]
     }
   ];
@@ -47,35 +47,32 @@ const Packages: React.FC = () => {
             Choose Your Collection
           </h1>
           <p className="max-w-xl mx-auto text-gray-600 text-sm sm:text-base leading-relaxed px-4">
-            Fast-turnaround content creation for modern couples. 
+            Fast-turnaround content creation for modern couples.
             Receive your raw footage and trends while the celebration is still fresh.
           </p>
         </div>
 
-        {/* Packages Grid - Optimized for Mobile Stacking */}
+        {/* Packages Grid */}
         <div className="flex flex-col md:grid md:grid-cols-3 gap-10 md:gap-6 lg:gap-8 max-w-6xl mx-auto">
           {collections.map((pkg) => (
-            <div 
+            <div
               key={pkg.id}
-              className={`relative flex flex-col p-8 md:p-10 shadow-xl border-t-4 transition-all duration-500 ${
-                pkg.isFeatured 
-                  ? "bg-wedding-slate border-wedding-gold md:-translate-y-4 ring-4 ring-wedding-gold/10" 
+              className={`relative flex flex-col p-8 md:p-10 shadow-xl border-t-4 transition-all duration-500 ${pkg.isFeatured
+                  ? "bg-wedding-slate border-wedding-gold md:-translate-y-4 ring-4 ring-wedding-gold/10"
                   : "bg-white border-gray-200"
-              }`}
+                }`}
             >
-              {/* Badge for Featured Package */}
               {pkg.isFeatured && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-wedding-gold text-white text-[10px] uppercase font-bold px-6 py-2 tracking-widest shadow-md">
                   Most Popular
                 </div>
               )}
 
-              {/* Package Header */}
               <div className="mb-8 text-center border-b pb-6 border-gray-100/10">
                 <h3 className={`font-serif text-3xl italic mb-1 ${pkg.isFeatured ? "text-white" : "text-wedding-slate"}`}>
                   {pkg.name}
                 </h3>
-                <p className={`text-[10px] uppercase tracking-[0.2em] mb-4 ${pkg.isFeatured ? "text-gray-400" : "text-gray-400"}`}>
+                <p className="text-[10px] uppercase tracking-[0.2em] mb-4 text-gray-400">
                   {pkg.tagline}
                 </p>
                 <div className={`text-5xl font-light mb-1 ${pkg.isFeatured ? "text-wedding-gold" : "text-wedding-slate"}`}>
@@ -86,7 +83,6 @@ const Packages: React.FC = () => {
                 </div>
               </div>
 
-              {/* Deliverables Sections */}
               <div className="flex-grow space-y-8 mb-10">
                 {/* Next Day */}
                 <div>
@@ -109,9 +105,9 @@ const Packages: React.FC = () => {
 
                 {/* Within 48 Hours */}
                 <div>
-                   <div className="flex items-center mb-4">
+                  <div className="flex items-center mb-4">
                     <div className="h-[1px] flex-grow bg-gray-400/20"></div>
-                    <h4 className={`mx-3 text-[10px] uppercase font-bold tracking-widest whitespace-nowrap ${pkg.isFeatured ? "text-gray-400" : "text-gray-400"}`}>
+                    <h4 className="mx-3 text-[10px] uppercase font-bold tracking-widest whitespace-nowrap text-gray-400">
                       Within 48 Hours
                     </h4>
                     <div className="h-[1px] flex-grow bg-gray-400/20"></div>
@@ -127,29 +123,26 @@ const Packages: React.FC = () => {
                 </div>
               </div>
 
-              {/* Action Button */}
-              <Link 
-                to="/contact" 
-                className={`w-full py-5 text-center uppercase text-xs tracking-[0.2em] font-bold transition-all duration-300 ${
-                  pkg.isFeatured 
-                    ? "bg-wedding-gold text-wedding-slate hover:bg-white hover:scale-[1.02]" 
+              <Link
+                to="/contact"
+                className={`w-full py-5 text-center uppercase text-xs tracking-[0.2em] font-bold transition-all duration-300 ${pkg.isFeatured
+                    ? "bg-wedding-gold text-wedding-slate hover:bg-white hover:scale-[1.02]"
                     : "border-2 border-wedding-slate text-wedding-slate hover:bg-wedding-slate hover:text-white"
-                }`}
+                  }`}
               >
                 Reserve Your Date
               </Link>
             </div>
           ))}
         </div>
-        
-        {/* Footer Note */}
+
         <div className="mt-16 text-center px-6">
-             <p className="text-gray-400 text-xs italic mb-4 tracking-wide">
-               *Travel fees may apply for locations outside our standard service area.
-             </p>
-             <Link to="/contact" className="inline-block text-wedding-gold uppercase text-[10px] tracking-[0.3em] font-bold border-b-2 border-wedding-gold/30 hover:border-wedding-gold transition-all pb-1">
-                Custom Multi-Day Packages
-             </Link>
+          <p className="text-gray-400 text-xs italic mb-4 tracking-wide">
+            *Travel fees may apply for locations outside our standard service area.
+          </p>
+          <Link to="/contact" className="inline-block text-wedding-gold uppercase text-[10px] tracking-[0.3em] font-bold border-b-2 border-wedding-gold/30 hover:border-wedding-gold transition-all pb-1">
+            Custom Multi-Day Packages
+          </Link>
         </div>
       </div>
     </div>
