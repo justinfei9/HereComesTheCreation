@@ -52,7 +52,8 @@ const VideoPlayer = ({ url, isActive }: { url: string; isActive: boolean }) => {
       ref={videoRef} 
       loop 
       muted 
-      playsInline 
+      playsInline
+      preload="none"
       key={url} // Force re-render when URL changes to update source
       className="w-full h-full object-cover"
     >
@@ -64,6 +65,7 @@ const VideoPlayer = ({ url, isActive }: { url: string; isActive: boolean }) => {
 export const VideoReels: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
   
   // Get the base URL for GitHub Pages
   const base = import.meta.env.BASE_URL;
@@ -114,10 +116,18 @@ export const VideoReels: React.FC = () => {
                   }}
                   exit={{ opacity: 0, x: direction > 0 ? -300 : 300, scale: 0.8 }}
                   transition={{ type: "spring", stiffness: 260, damping: 26 }}
-                  className="absolute w-[240px] md:w-[300px] shadow-2xl overflow-hidden rounded-sm bg-gray-100 touch-pan-y"
+                  className="absolute w-[240px] md:w-[300px] shadow-2xl overflow-hidden rounded-sm bg-gray-100 touch-pan-y cursor-pointer"
+                  onClick={() => setHasStarted(true)}
                 >
-                  <div className="aspect-[9/16]">
-                    <VideoPlayer url={fullUrl} isActive={position === 0} />
+                  <div className="aspect-[9/16] relative">
+                    <VideoPlayer url={fullUrl} isActive={position === 0 && hasStarted} />
+                    {!hasStarted && position === 0 && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                        <span className="text-[10px] uppercase tracking-[0.4em] text-white bg-black/40 px-4 py-2">
+                          Tap to play
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               );

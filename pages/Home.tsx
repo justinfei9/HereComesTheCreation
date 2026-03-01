@@ -19,7 +19,7 @@ const Home: React.FC = () => {
             className="w-full h-full object-cover brightness-[0.4]"
           >
             <source src={`${base}content/video1.MOV`} type="video/mp4" />
-            <img src={`${base}content/image1.JPEG`} alt="Fallback" width={1920} height={1080} />
+            <img src={`${base}content/image1.webp`} alt="Fallback" width={1920} height={1080} />
           </video>
         </div>
 
@@ -79,7 +79,7 @@ const Home: React.FC = () => {
       {/* Full-Width Feature Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <img 
-          src={`${base}content/image2.JPEG`} 
+          src={`${base}content/image2.webp`} 
           alt="Wedding BTS" 
           width={721}
           height={1009}

@@ -7,7 +7,7 @@ interface LogoProps {
 const Logo: React.FC<LogoProps> = ({ className = "h-20" }) => {
   const base = import.meta.env.BASE_URL;
   
-  const logoSrc = `${base}content/logo.png`;
+  const logoSrc = `${base}content/logo.webp`;
 
   return (
     <div className={`flex items-center justify-center bg-white ${className}`}>
