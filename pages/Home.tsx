@@ -33,7 +33,7 @@ const Home: React.FC = () => {
               <span className="italic">Actually</span> Watch.
             </h1>
             <div className="flex flex-col sm:flex-row items-start gap-6">
-              <Link to="/contact" className="w-full sm:w-auto px-10 py-5 bg-wedding-gold text-wedding-slate font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-white transition-all shadow-xl">
+              <Link to="/contact" className="w-full sm:w-auto px-10 py-5 bg-wedding-gold text-white font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-wedding-slate transition-all shadow-xl">
                 Book Your Date
               </Link>
               <Link to="/portfolio" className="w-full sm:w-auto px-10 py-5 border border-white/30 text-white font-bold uppercase tracking-[0.2em] text-[10px] backdrop-blur-sm hover:bg-white hover:text-wedding-slate transition-all shadow-xl">

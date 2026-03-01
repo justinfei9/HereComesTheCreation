@@ -81,6 +81,10 @@ const Navbar: React.FC = () => {
             className={`md:hidden z-[110] p-2 focus:outline-none transition-colors ${
               isMenuOpen ? 'text-wedding-slate' : (isDarkText ? 'text-wedding-slate' : 'text-white')
             }`}
+            type="button"
+            aria-label={isMenuOpen ? 'Close main navigation' : 'Open main navigation'}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-main-nav"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <div className="w-6 h-5 relative flex flex-col justify-between">
@@ -100,6 +104,7 @@ const Navbar: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
+            id="mobile-main-nav"
             className="fixed inset-0 bg-white z-[150] md:hidden flex flex-col justify-center items-center"
           >
             <div className="flex flex-col space-y-10 text-center">

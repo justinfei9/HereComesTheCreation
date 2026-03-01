@@ -71,11 +71,11 @@ const Founder: React.FC = () => {
 
             <div className="grid grid-cols-2 gap-8 pt-10">
               <div>
-                <h4 className="font-serif text-2xl text-wedding-gold italic mb-2">24h Delivery</h4>
+                <h3 className="font-serif text-2xl text-wedding-gold italic mb-2">24h Delivery</h3>
                 <p className="text-[10px] text-gray-500 uppercase tracking-widest">Instant Gratification</p>
               </div>
               <div>
-                <h4 className="font-serif text-2xl text-wedding-gold italic mb-2">Artistic Eye</h4>
+                <h3 className="font-serif text-2xl text-wedding-gold italic mb-2">Artistic Eye</h3>
                 <p className="text-[10px] text-gray-500 uppercase tracking-widest">Editorial Perspective</p>
               </div>
             </div>

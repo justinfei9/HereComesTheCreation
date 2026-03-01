@@ -115,8 +115,9 @@ const Testimonials: React.FC = () => {
             <button
               key={i}
               onClick={() => setIndex(i)}
-              className={`h-1 transition-all duration-700 ease-in-out ${
-                i === index ? 'w-10 bg-wedding-gold' : 'w-2 bg-wedding-gold/20'
+              type="button"
+              className={`px-3 py-2 rounded-full border border-transparent transition-all duration-700 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wedding-gold ${
+                i === index ? 'bg-wedding-gold' : 'bg-wedding-gold/20'
               }`}
               aria-label={`View testimonial ${i + 1}`}
             />

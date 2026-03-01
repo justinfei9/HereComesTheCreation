@@ -13,17 +13,17 @@ const Footer: React.FC = () => {
           {/* Column 1: Branding */}
           <div className="flex flex-col items-center md:items-start">
             <Logo className="h-12 w-auto mb-4" />
-            <p className="font-serif italic text-lg text-wedding-gold/70">
+            <p className="font-serif italic text-lg text-wedding-gold/80">
               Inclusive to all love.
             </p>
-            <p className="text-[9px] tracking-[0.3em] uppercase mt-2 text-gray-500">
+            <p className="text-[9px] tracking-[0.3em] uppercase mt-2 text-wedding-cream/70">
               Est. 2025
             </p>
           </div>
 
           {/* Column 2: Simplified Navigation */}
           <div className="flex flex-col items-center">
-            <h4 className="uppercase tracking-[0.4em] text-[9px] font-bold mb-6 text-wedding-gold/50">Navigate</h4>
+            <h3 className="uppercase tracking-[0.4em] text-[9px] font-bold mb-6 text-wedding-gold/80">Navigate</h3>
             <ul className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-[10px] tracking-[0.2em] uppercase font-light">
               <li><Link to="/" className="hover:text-wedding-gold transition-colors">Home</Link></li>
               <li><Link to="/portfolio" className="hover:text-wedding-gold transition-colors">Portfolio</Link></li>
@@ -35,13 +35,14 @@ const Footer: React.FC = () => {
 
           {/* Column 3: Social Icons */}
           <div className="flex flex-col items-center md:items-end">
-            <h4 className="uppercase tracking-[0.4em] text-[9px] font-bold mb-6 text-wedding-gold/50">Connect</h4>
+            <h3 className="uppercase tracking-[0.4em] text-[9px] font-bold mb-6 text-wedding-gold/80">Connect</h3>
             <div className="flex space-x-6 text-xl">
               <a 
                 href="https://instagram.com/herecomesthecreations" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="text-wedding-cream hover:text-wedding-gold transition-all hover:-translate-y-1"
+                aria-label="Visit Here Comes The Creations on Instagram"
               >
                 <i className="fa-brands fa-instagram"></i>
               </a>
@@ -50,11 +51,12 @@ const Footer: React.FC = () => {
                 target="_blank" 
                 rel="noreferrer" 
                 className="text-wedding-cream hover:text-wedding-gold transition-all hover:-translate-y-1"
+                aria-label="Visit Here Comes The Creations on TikTok"
               >
                 <i className="fa-brands fa-tiktok"></i>
               </a>
             </div>
-            <p className="mt-4 text-[9px] tracking-[0.2em] text-gray-600 uppercase">
+            <p className="mt-4 text-[9px] tracking-[0.2em] text-wedding-cream/70 uppercase">
               @herecomesthecreations
             </p>
           </div>
