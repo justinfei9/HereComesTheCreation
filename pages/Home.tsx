@@ -18,7 +18,7 @@ const Home: React.FC = () => {
             playsInline
             className="w-full h-full object-cover brightness-[0.4]"
           >
-            <source src={`${base}content/video1.MOV`} type="video/mp4" />
+            <source src={`${base}content/video1.mp4`} type="video/mp4" />
             <img src={`${base}content/image1.webp`} alt="Fallback" width={1920} height={1080} />
           </video>
         </div>
@@ -56,7 +56,7 @@ const Home: React.FC = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[ 'highlight1NM.MOV', 'short1.MOV', 'video3.MOV' ].map((vid, index) => (
+            {[ 'highlight1NM.mp4', 'short1.mp4', 'video3.mp4' ].map((vid, index) => (
               <div key={index} className="aspect-[9/16] bg-gray-100 overflow-hidden shadow-2xl">
                 <video autoPlay loop muted playsInline className="w-full h-full object-cover">
                   <source src={`${base}content/${vid}`} type="video/mp4" />
