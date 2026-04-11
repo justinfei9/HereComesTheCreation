@@ -65,10 +65,13 @@ const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-[8px] md:text-[9px] uppercase tracking-[0.3em] text-gray-500">
           <p>© {new Date().getFullYear()} Here Comes The Creations</p>
-          <div className="mt-4 md:mt-0 space-x-8">
+          <div className="mt-4 md:mt-0 space-x-6 md:space-x-8 flex items-center">
+            <a href="https://feinwebsites.com" target="_blank" rel="noreferrer" className="hover:text-wedding-gold transition-colors">
+              Website by Justin Feinman
+            </a>
             <button 
               onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} 
-              className="hover:text-wedding-gold transition-colors border-l border-gray-800 pl-8 hidden md:inline"
+              className="hover:text-wedding-gold transition-colors border-l border-gray-800 pl-6 md:pl-8 hidden md:inline"
             >
               Back to Top ↑
             </button>
